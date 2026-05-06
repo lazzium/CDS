@@ -72,7 +72,7 @@ const StepItem: React.FC<StepItemProps> = ({ step }) => {
     <div ref={ref} className="relative flex items-start w-full pl-[30px] md:pl-[100px]">
       {/* Square Dot (visible on mobile) */}
       <div 
-        className={`absolute left-0 md:left-[60px] top-[0.4rem] w-[10px] h-[10px] -translate-x-[calc(50%-0.5px)] z-30 transition-colors duration-300 ${isInView ? 'bg-[#c084fc]' : 'bg-white border-2 border-[#1a1a1a]/20'}`}
+        className={`absolute left-0 md:left-[60px] top-[0.4rem] w-[10px] h-[10px] -translate-x-[calc(50%-0.5px)] z-30 transition-colors duration-300 ${isInView ? 'bg-[#dcf5a1]' : 'bg-white border-2 border-[#1a1a1a]/20'}`}
       ></div>
 
       {/* Number (hidden on mobile, shown on md) */}
@@ -87,13 +87,13 @@ const StepItem: React.FC<StepItemProps> = ({ step }) => {
         {/* Mobile Number/Badge - stacked */}
         <div className="md:hidden flex flex-col items-start gap-3 mb-5">
           <span className={`text-[0.85rem] font-medium tracking-tight transition-colors duration-300 ${isInView ? 'text-[#1a1a1a]' : 'text-[#1a1a1a]/40'}`}>{step.num}</span>
-          <div className="bg-[#c084fc] text-[#1c1c1c] text-[0.7rem] font-bold tracking-wide px-3.5 py-1.5 rounded-none">
+          <div className="bg-[#dcf5a1] text-[#1c1c1c] text-[0.7rem] font-bold tracking-wide px-3.5 py-1.5 rounded-none">
             {step.badge}
           </div>
         </div>
         
         {/* Desktop Badge */}
-        <div className="hidden md:inline-block bg-[#c084fc] text-[#1c1c1c] text-[0.7rem] font-bold tracking-wide px-3.5 py-1.5 rounded-none mb-4 md:mb-6">
+        <div className="hidden md:inline-block bg-[#dcf5a1] text-[#1c1c1c] text-[0.7rem] font-bold tracking-wide px-3.5 py-1.5 rounded-none mb-4 md:mb-6">
           {step.badge}
         </div>
         <h3 className={`text-[1.35rem] md:text-[2rem] font-medium tracking-tight mb-4 md:mb-5 leading-[1.25] transition-colors duration-300 ${isInView ? 'text-[#1a1a1a]' : 'text-[#1a1a1a]/70'}`}>
@@ -155,7 +155,7 @@ function ProcessSection() {
         
         {/* Left Sticky Column */}
         <div className="w-full md:w-5/12 sticky top-24 md:top-32 lg:top-40 pt-0 md:pt-4 z-10">
-          <div className="text-[#c084fc] text-[4rem] md:text-[6rem] leading-none mb-2 md:mb-4 font-bold" style={{fontFamily: 'serif'}}>“</div>
+          <div className="text-[#dcf5a1] text-[4rem] md:text-[6rem] leading-none mb-2 md:mb-4 font-bold" style={{fontFamily: 'serif'}}>“</div>
           <p className="text-[1.1rem] md:text-[1.75rem] font-medium leading-[1.3] text-[#1a1a1a] mb-8 max-w-[280px] md:max-w-sm">
             Tu n’as pas besoin de maîtriser Shopify, le choix produit et la création publicitaire pour commencer proprement.
           </p>
@@ -174,7 +174,7 @@ function ProcessSection() {
           
           {/* Animated Scroll Progress Line */}
           <motion.div 
-            className="absolute left-0 md:left-[60px] top-3 -bottom-32 md:-bottom-40 lg:-bottom-48 w-0.5 bg-[#c084fc] origin-top z-20"
+            className="absolute left-0 md:left-[60px] top-3 -bottom-32 md:-bottom-40 lg:-bottom-48 w-0.5 bg-[#dcf5a1] origin-top z-20"
             style={{ scaleY: scrollYProgress, translateX: '-0.5px' }}
           ></motion.div>
 
@@ -193,7 +193,7 @@ function ProcessSection() {
 
 function TeamSection() {
   return (
-    <AnimatedSection id="equipe" className="relative w-full bg-[#c084fc] pt-24 pb-16 md:pt-32 md:pb-24 xl:pt-40 xl:pb-32 overflow-hidden z-20">
+    <AnimatedSection id="equipe" className="relative w-full bg-[#dcf5a1] pt-24 pb-16 md:pt-32 md:pb-24 xl:pt-40 xl:pb-32 overflow-hidden z-20">
       <div className="absolute inset-0 z-0 bg-gradient-to-br from-white/5 to-transparent mix-blend-overlay pointer-events-none"></div>
       
       <div className="relative z-10 max-w-[2000px] mx-auto px-6 md:px-12 flex flex-col justify-between h-full"> 
@@ -203,7 +203,7 @@ function TeamSection() {
           </div>
           <div className="w-full lg:w-9/12 lg:pr-12">
             <h2 className="text-[3rem] md:text-[4.5rem] lg:text-[5.5rem] xl:text-[6.5rem] tracking-tighter leading-[0.9] text-[#0a0a0a] font-medium max-w-5xl">
-              On est des <span className="text-white italic" style={{ fontFamily: '"Instrument Sans", sans-serif' }}>stratèges, créatifs et experts e-commerce</span> qui rendent le lancement en ligne simple, rapide et sans stress.
+              On est des stratèges, créatifs et experts e-commerce qui rendent le lancement en ligne simple, rapide et sans stress.
             </h2>
           </div>
         </div>
@@ -229,7 +229,7 @@ function TeamSection() {
                 </p>
 
                 <div className="w-full sm:w-auto pr-6 sm:pr-0">
-                  <a href={WHATSAPP_LINK} target="_blank" rel="noreferrer" className="bg-[#1c1c1c] text-[#c084fc] px-6 py-4 flex items-center justify-center gap-4 font-bold text-[0.95rem] tracking-wide hover:bg-black transition-colors w-full sm:w-auto rounded-none">
+                  <a href={WHATSAPP_LINK} target="_blank" rel="noreferrer" className="bg-[#1c1c1c] text-[#dcf5a1] px-6 py-4 flex items-center justify-center gap-4 font-bold text-[0.95rem] tracking-wide hover:bg-black transition-colors w-full sm:w-auto rounded-none">
                     Parler avec nous <ArrowUpRight size={18} strokeWidth={2.5} />
                   </a>
                 </div>
@@ -399,7 +399,7 @@ function ContactAndFooterSection() {
   return (
     <>
       {/* Top CTA */}
-      <AnimatedSection id="contact" className="relative w-full bg-[#c084fc] py-32 md:py-48 px-6 md:px-12 flex flex-col items-center justify-center overflow-hidden z-10">
+      <AnimatedSection id="contact" className="relative w-full bg-[#dcf5a1] py-32 md:py-48 px-6 md:px-12 flex flex-col items-center justify-center overflow-hidden z-10">
         {/* Cross Pattern Background */}
         <div 
           className="absolute inset-[-50%] z-0 pointer-events-none opacity-[0.15]"
@@ -426,18 +426,18 @@ function ContactAndFooterSection() {
       </AnimatedSection>
 
       {/* Bottom Footer */}
-      <footer className="relative w-full bg-[#121615] text-white overflow-hidden z-20">
+      <footer className="relative w-full bg-[#121615] text-[#dcf5a1] overflow-hidden z-20">
         <div className="max-w-[2000px] mx-auto relative z-10 px-6 md:px-12 pt-24 pb-8">
           <div className="flex flex-col lg:flex-row justify-between items-start gap-16 mb-24 md:mb-32">
             
             {/* Left Box */}
             <div className="w-full lg:w-4/12 flex flex-col items-start gap-8">
-              <p className="text-white text-[1.2rem] md:text-[1.35rem] font-medium leading-[1.3] tracking-tight">
+              <p className="text-[#dcf5a1] text-[1.2rem] md:text-[1.35rem] font-medium leading-[1.3] tracking-tight">
                 Tu veux savoir si ton projet e-commerce est viable ? Envoie-nous un message sur WhatsApp et on cadre la suite.
               </p>
               
               <div className="flex items-center gap-0 w-full sm:w-auto mt-4">
-                <a href={WHATSAPP_LINK} target="_blank" rel="noreferrer" className="flex-1 sm:flex-none justify-center bg-[#c084fc] text-[#121615] px-7 py-3.5 rounded-none text-[0.95rem] font-bold tracking-wide hover:bg-white transition-colors flex items-center gap-4">
+                <a href={WHATSAPP_LINK} target="_blank" rel="noreferrer" className="flex-1 sm:flex-none justify-center bg-[#dcf5a1] text-[#121615] px-7 py-3.5 rounded-none text-[0.95rem] font-bold tracking-wide hover:bg-white transition-colors flex items-center gap-4">
                   Démarrer maintenant <ArrowUpRight size={18} strokeWidth={2.5} />
                 </a>
               </div>
@@ -446,12 +446,12 @@ function ContactAndFooterSection() {
             {/* Right Links */}
             <div className="w-full lg:w-6/12 flex flex-col md:flex-row justify-between md:justify-end gap-12 md:gap-32 lg:pr-12">
               <div className="flex flex-col gap-4">
-                <div className="flex items-center gap-3 text-white/60 text-[0.7rem] font-bold tracking-widest uppercase mb-4">
+                <div className="flex items-center gap-3 text-[#dcf5a1]/60 text-[0.7rem] font-bold tracking-widest uppercase mb-4">
                   <CornerDownRight size={14} className="opacity-70" /> PAGES
                 </div>
                 <div className="flex flex-col gap-3">
                   {['Accueil', 'Offre', 'Méthode', 'Services', 'FAQ', 'WhatsApp'].map(link => (
-                    <a key={link} href="#" className="text-white hover:text-white/80 transition-colors text-[1rem] font-medium tracking-tight">
+                    <a key={link} href="#" className="text-[#dcf5a1] hover:text-white transition-colors text-[1rem] font-medium tracking-tight">
                       {link}
                     </a>
                   ))}
@@ -461,12 +461,12 @@ function ContactAndFooterSection() {
           </div>
 
           {/* Bottom Huge Logo and Copyright */}
-          <div className="flex flex-col md:flex-row items-start md:items-end justify-between gap-8 border-t border-white/10 pt-10">
-            <h1 className="text-[4rem] md:text-[9rem] lg:text-[13rem] leading-[0.8] font-medium text-white tracking-tighter">
+          <div className="flex flex-col md:flex-row items-start md:items-end justify-between gap-8 border-t border-[#dcf5a1]/10 pt-10">
+            <h1 className="text-[4rem] md:text-[9rem] lg:text-[13rem] leading-[0.8] font-medium text-[#dcf5a1] tracking-tighter">
               ©CDS
             </h1>
             
-            <div className="flex flex-col md:flex-row items-start md:items-center gap-2 md:gap-8 text-white/60 text-[0.65rem] font-bold tracking-widest uppercase pb-2">
+            <div className="flex flex-col md:flex-row items-start md:items-center gap-2 md:gap-8 text-[#dcf5a1]/60 text-[0.65rem] font-bold tracking-widest uppercase pb-2">
               <span>AGENCE E-COMMERCE</span>
               <span>©2026 Cosmic Digital Studio</span>
             </div>
@@ -491,13 +491,14 @@ function LoadingScreen({ onComplete }: { onComplete: () => void }) {
         y: '-100%',
         transition: { duration: 0.8, ease: [0.76, 0, 0.24, 1] }
       }}
-      className="fixed inset-0 z-[10000] flex items-center justify-center overflow-hidden bg-[#c084fc]"
+      className="fixed inset-0 z-[10000] flex items-center justify-center overflow-hidden bg-[#dcf5a1]"
     >
       <img
         src={headerBackground}
         alt="Loading background"
         className="absolute inset-0 h-full w-full object-cover opacity-65"
       />
+      <div className="absolute inset-0 bg-black/30"></div>
       <div className="flex flex-col items-center">
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
@@ -604,7 +605,7 @@ export default function App() {
   ];
 
   return (
-    <div className="relative bg-[#1c1c1c] selection:bg-[#c084fc] selection:text-black overflow-x-hidden text-white w-full" style={{ fontFamily: '"Geist", sans-serif' }}>
+    <div className="relative bg-[#1c1c1c] selection:bg-[#dcf5a1] selection:text-black overflow-x-hidden text-white w-full" style={{ fontFamily: '"Geist", sans-serif' }}>
       <AnimatePresence mode="wait">
         {isLoading && <LoadingScreen onComplete={() => setIsLoading(false)} />}
       </AnimatePresence>
@@ -620,6 +621,9 @@ export default function App() {
             alt="Wind turbines on green hills"
             className="w-full h-full object-cover object-bottom opacity-80"
           />
+          {/* Gradual overlays to make text readable and blend edges */}
+          <div className="absolute inset-0 bg-black/10"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-[#1c1c1c] via-black/20 to-transparent"></div>
         </div>
 
 
@@ -634,10 +638,10 @@ export default function App() {
             </div>
             <MegaNavigation />
             <div className="hidden md:flex items-center gap-0">
-              <a href={WHATSAPP_LINK} target="_blank" rel="noreferrer" className="bg-[#c084fc] text-black px-6 py-3 rounded-none text-xs font-semibold tracking-wide hover:bg-white transition-colors shadow-sm border border-transparent">
+              <a href={WHATSAPP_LINK} target="_blank" rel="noreferrer" className="bg-[#dcf5a1] text-black px-6 py-3 rounded-none text-xs font-semibold tracking-wide hover:bg-white transition-colors shadow-sm border border-transparent">
                 Contact
               </a>
-              <a href={WHATSAPP_LINK} target="_blank" rel="noreferrer" className="bg-[#c084fc] text-black p-3 rounded-none hover:bg-white transition-colors flex items-center justify-center shadow-sm border border-transparent">
+              <a href={WHATSAPP_LINK} target="_blank" rel="noreferrer" className="bg-[#dcf5a1] text-black p-3 rounded-none hover:bg-white transition-colors flex items-center justify-center shadow-sm border border-transparent">
                 <ArrowUpRight size={16} strokeWidth={2.5} />
               </a>
             </div>
@@ -728,10 +732,10 @@ export default function App() {
 
           {/* Buttons */}
           <div className="flex items-center gap-1">
-            <a href={WHATSAPP_LINK} target="_blank" rel="noreferrer" className="bg-[#c084fc] text-black px-7 py-3 rounded-none text-[0.95rem] font-medium tracking-wide hover:bg-white transition-colors shadow-lg">
+            <a href={WHATSAPP_LINK} target="_blank" rel="noreferrer" className="bg-[#dcf5a1] text-black px-7 py-3 rounded-none text-[0.95rem] font-medium tracking-wide hover:bg-white transition-colors shadow-lg">
               Demander un devis
             </a>
-            <a href={WHATSAPP_LINK} target="_blank" rel="noreferrer" className="bg-[#c084fc] text-black p-3.5 rounded-none hover:bg-white transition-colors flex items-center justify-center shadow-lg">
+            <a href={WHATSAPP_LINK} target="_blank" rel="noreferrer" className="bg-[#dcf5a1] text-black p-3.5 rounded-none hover:bg-white transition-colors flex items-center justify-center shadow-lg">
               <ArrowUpRight size={18} strokeWidth={2.5} />
             </a>
           </div>
@@ -750,7 +754,7 @@ export default function App() {
         <div className="relative z-10 max-w-[2000px] mx-auto px-6 md:px-12 py-24 md:py-32 xl:py-40">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-16 md:gap-4 items-start">
           <div className="md:col-span-4 pl-0 lg:pl-10">
-            <h3 className="font-bold text-[0.95rem] tracking-tight text-[#9333ea]">
+            <h3 className="font-bold text-[0.95rem] tracking-tight text-[#8fb339]">
               Offre clé en main
             </h3>
           </div>
@@ -929,10 +933,10 @@ export default function App() {
           
           <div className="flex flex-shrink-0">
             <div className="flex items-center gap-0">
-              <a href={WHATSAPP_LINK} target="_blank" rel="noreferrer" className="bg-[#c084fc] text-black px-7 py-3.5 rounded-none text-[0.8rem] font-medium tracking-wide hover:bg-black hover:text-white transition-colors shadow-sm">
+              <a href={WHATSAPP_LINK} target="_blank" rel="noreferrer" className="bg-[#dcf5a1] text-black px-7 py-3.5 rounded-none text-[0.8rem] font-medium tracking-wide hover:bg-black hover:text-white transition-colors shadow-sm">
                 Démarrer maintenant
               </a>
-              <a href={WHATSAPP_LINK} target="_blank" rel="noreferrer" className="bg-[#c084fc] text-black p-3.5 rounded-none hover:bg-black hover:text-white transition-colors flex items-center justify-center shadow-sm">
+              <a href={WHATSAPP_LINK} target="_blank" rel="noreferrer" className="bg-[#dcf5a1] text-black p-3.5 rounded-none hover:bg-black hover:text-white transition-colors flex items-center justify-center shadow-sm">
                 <ArrowUpRight size={18} strokeWidth={2.5} />
               </a>
             </div>
