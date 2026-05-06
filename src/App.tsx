@@ -515,6 +515,7 @@ function LoadingScreen({ onComplete }: { onComplete: () => void }) {
 
 export default function App() {
   const [isLoading, setIsLoading] = useState(true);
+  const [activeService, setActiveService] = useState<number | null>(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeMobileMenu, setActiveMobileMenu] = useState<string | null>(null);
 
@@ -558,6 +559,12 @@ export default function App() {
       document.body.style.overflow = 'unset';
     };
   }, [isLoading]);
+
+  useEffect(() => {
+    if (typeof window !== 'undefined' && window.innerWidth < 768) {
+      setActiveService(0);
+    }
+  }, []);
 
   const services = [
     {
@@ -841,12 +848,13 @@ export default function App() {
 
         <div className="w-full flex flex-col border-t border-black/10">
           {services.map((service, index) => {
-            const isActive = true;
+            const isActive = activeService === index;
 
             return (
               <div
                 key={service.id}
-                className="grid grid-cols-12 gap-4 py-8 md:py-12 border-b border-black/10 group"
+                onClick={() => setActiveService(isActive ? null : index)}
+                className="grid grid-cols-12 gap-4 py-8 md:py-12 border-b border-black/10 group cursor-pointer hover:bg-black/[0.02] transition-colors"
               >
                 <div className="col-span-2 md:col-span-3 flex items-start pl-0 md:pl-8 lg:pl-12 pt-2 md:pt-4">
                   <ArrowRight strokeWidth={1.5} className={`w-5 h-5 md:w-6 md:h-6 transition-colors duration-300 ${isActive ? 'text-black translate-x-2' : 'text-black/30 group-hover:text-black/60'}`} />
@@ -881,10 +889,10 @@ export default function App() {
                             </a>
                           </div>
 
-                          {service.images && (
-                            <div className="mt-12 md:mt-16 flex flex-col gap-4 md:gap-6 pb-4">
+                      {service.images && (
+                        <div className="mt-12 md:mt-16 flex flex-col md:flex-row gap-4 md:gap-6 overflow-visible md:overflow-x-auto pb-4 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
                               {service.images.map((img, i) => (
-                                 <div key={i} className="w-full max-w-[85vw] sm:max-w-[350px] md:max-w-[400px] lg:max-w-[450px] h-[250px] md:h-[300px] lg:h-[338px] rounded-none overflow-hidden">
+                             <div key={i} className="w-full md:w-[400px] lg:w-[450px] h-[250px] md:h-[300px] lg:h-[338px] rounded-none overflow-hidden shrink-0">
                                     <img src={img} alt={`${service.title} preview ${i + 1}`} className="w-full h-full object-cover" />
                                  </div>
                               ))}
