@@ -5,3 +5,23 @@
   --font-geist: "Geist", sans-serif;
   --font-anton: "Anton SC", sans-serif;
 }
+
+:root {
+  --color-primary: #4b166f;
+  --color-primary-dark: #180521;
+  --color-accent: #ff4fb8;
+  --color-accent-soft: #ffe4f4;
+  --color-surface: #fff8fc;
+  --color-ink: #1b0b26;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+  background: var(--color-primary-dark);
+}
+
+body {
+  margin: 0;
+}

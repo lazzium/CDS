@@ -9,18 +9,18 @@ const TABS = [
     id: 'offre',
     label: 'Offre',
     content: (setActiveTab: (tab: string | null) => void) => (
-      <div className="w-[350px] p-6 text-black bg-white">
-        <h3 className="font-bold mb-2 uppercase text-[0.6rem] tracking-wider text-black/50">Ce qui est inclus</h3>
-        <div className="grid grid-cols-1 gap-1 mt-4 text-sm font-medium tracking-normal text-black capitalize">
-          <a href="#services" onClick={closeOnClick(setActiveTab)} className="flex items-center justify-between p-3 rounded-none hover:bg-black/5 cursor-pointer group transition-colors">
+      <div className="w-[350px] p-6 text-[var(--color-ink)] bg-white">
+        <h3 className="font-bold mb-2 uppercase text-[0.6rem] tracking-wider text-[var(--color-primary)]/55">Ce qui est inclus</h3>
+        <div className="grid grid-cols-1 gap-1 mt-4 text-sm font-medium tracking-normal text-[var(--color-ink)] capitalize">
+          <a href="#services" onClick={closeOnClick(setActiveTab)} className="flex items-center justify-between p-3 rounded-none hover:bg-[var(--color-accent-soft)] cursor-pointer group transition-colors">
             <span>Boutique Shopify optimisée</span>
             <ArrowRight size={14} className="opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all" />
           </a>
-          <a href="#services" onClick={closeOnClick(setActiveTab)} className="flex items-center justify-between p-3 rounded-none hover:bg-black/5 cursor-pointer group transition-colors">
+          <a href="#services" onClick={closeOnClick(setActiveTab)} className="flex items-center justify-between p-3 rounded-none hover:bg-[var(--color-accent-soft)] cursor-pointer group transition-colors">
             <span>Produit validé</span>
             <ArrowRight size={14} className="opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all" />
           </a>
-          <a href="#services" onClick={closeOnClick(setActiveTab)} className="flex items-center justify-between p-3 rounded-none hover:bg-black/5 cursor-pointer group transition-colors">
+          <a href="#services" onClick={closeOnClick(setActiveTab)} className="flex items-center justify-between p-3 rounded-none hover:bg-[var(--color-accent-soft)] cursor-pointer group transition-colors">
             <span>Créatives TikTok & Meta</span>
             <ArrowRight size={14} className="opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all" />
           </a>
@@ -32,12 +32,12 @@ const TABS = [
     id: 'agence',
     label: 'Agence',
     content: (setActiveTab: (tab: string | null) => void) => (
-      <div className="w-[250px] p-6 text-black bg-white">
-        <h3 className="font-bold mb-2 uppercase text-[0.6rem] tracking-wider text-black/50">Cosmic Digital Studio</h3>
-        <ul className="text-sm space-y-1 mt-4 font-medium tracking-normal capitalize text-black">
-          <li><a href="#methode" onClick={closeOnClick(setActiveTab)} className="hover:bg-black/5 px-3 py-2 rounded-none cursor-pointer transition-colors block">Méthode</a></li>
-          <li><a href="#contact" onClick={closeOnClick(setActiveTab)} className="hover:bg-black/5 px-3 py-2 rounded-none cursor-pointer transition-colors block">Accompagnement</a></li>
-          <li><a href="#faq" onClick={closeOnClick(setActiveTab)} className="hover:bg-black/5 px-3 py-2 rounded-none cursor-pointer transition-colors block">FAQ</a></li>
+      <div className="w-[250px] p-6 text-[var(--color-ink)] bg-white">
+        <h3 className="font-bold mb-2 uppercase text-[0.6rem] tracking-wider text-[var(--color-primary)]/55">Cosmic Digital Studio</h3>
+        <ul className="text-sm space-y-1 mt-4 font-medium tracking-normal capitalize text-[var(--color-ink)]">
+          <li><a href="#methode" onClick={closeOnClick(setActiveTab)} className="hover:bg-[var(--color-accent-soft)] px-3 py-2 rounded-none cursor-pointer transition-colors block">Méthode</a></li>
+          <li><a href="#contact" onClick={closeOnClick(setActiveTab)} className="hover:bg-[var(--color-accent-soft)] px-3 py-2 rounded-none cursor-pointer transition-colors block">Accompagnement</a></li>
+          <li><a href="#faq" onClick={closeOnClick(setActiveTab)} className="hover:bg-[var(--color-accent-soft)] px-3 py-2 rounded-none cursor-pointer transition-colors block">FAQ</a></li>
         </ul>
       </div>
     )
@@ -46,20 +46,20 @@ const TABS = [
     id: 'solutions',
     label: 'Solutions',
     content: (setActiveTab: (tab: string | null) => void) => (
-      <div className="w-[420px] p-6 text-black bg-white">
-        <h3 className="font-bold mb-2 uppercase text-[0.6rem] tracking-wider text-black/50">Ce que nous faisons</h3>
+      <div className="w-[420px] p-6 text-[var(--color-ink)] bg-white">
+        <h3 className="font-bold mb-2 uppercase text-[0.6rem] tracking-wider text-[var(--color-primary)]/55">Ce que nous faisons</h3>
         <div className="grid grid-cols-2 gap-3 text-sm mt-4 tracking-normal capitalize">
-          <a href="#services" onClick={closeOnClick(setActiveTab)} className="p-4 bg-black/5 rounded-none hover:bg-[#dcf5a1]/40 cursor-pointer transition-colors block">
-            <div className="font-bold mb-1 text-black">Shopify</div>
-            <p className="text-black/60 text-xs">Structure, pages, conversion</p>
+          <a href="#services" onClick={closeOnClick(setActiveTab)} className="p-4 bg-[var(--color-surface)] rounded-none hover:bg-[var(--color-accent-soft)] cursor-pointer transition-colors block">
+            <div className="font-bold mb-1 text-[var(--color-ink)]">Shopify</div>
+            <p className="text-[var(--color-ink)]/60 text-xs">Structure, pages, conversion</p>
           </a>
-          <a href="#services" onClick={closeOnClick(setActiveTab)} className="p-4 bg-black/5 rounded-none hover:bg-[#dcf5a1]/40 cursor-pointer transition-colors block">
-            <div className="font-bold mb-1 text-black">Produit</div>
-            <p className="text-black/60 text-xs">Recherche, potentiel, angle</p>
+          <a href="#services" onClick={closeOnClick(setActiveTab)} className="p-4 bg-[var(--color-surface)] rounded-none hover:bg-[var(--color-accent-soft)] cursor-pointer transition-colors block">
+            <div className="font-bold mb-1 text-[var(--color-ink)]">Produit</div>
+            <p className="text-[var(--color-ink)]/60 text-xs">Recherche, potentiel, angle</p>
           </a>
-          <a href="#services" onClick={closeOnClick(setActiveTab)} className="p-4 bg-black/5 rounded-none hover:bg-[#dcf5a1]/40 cursor-pointer transition-colors block">
-            <div className="font-bold mb-1 text-black">Publicités</div>
-            <p className="text-black/60 text-xs">TikTok, Meta, créatives</p>
+          <a href="#services" onClick={closeOnClick(setActiveTab)} className="p-4 bg-[var(--color-surface)] rounded-none hover:bg-[var(--color-accent-soft)] cursor-pointer transition-colors block">
+            <div className="font-bold mb-1 text-[var(--color-ink)]">Publicités</div>
+            <p className="text-[var(--color-ink)]/60 text-xs">TikTok, Meta, créatives</p>
           </a>
         </div>
       </div>
@@ -93,7 +93,7 @@ export function MegaNavigation() {
 
   return (
     <div
-      className="hidden lg:flex flex-col z-50 text-[0.65rem] font-bold tracking-[0.1em] text-black/80 uppercase"
+      className="hidden lg:flex flex-col z-50 text-[0.65rem] font-bold tracking-[0.1em] text-[var(--color-ink)]/80 uppercase"
       onMouseLeave={handleMouseLeave}
       onMouseEnter={handleMouseEnter}
     >
@@ -104,7 +104,7 @@ export function MegaNavigation() {
             className="relative cursor-pointer transition-colors"
             onMouseEnter={() => setActiveTab(tab.id)}
           >
-            <div className="relative z-10 px-4 py-2 flex items-center gap-1 transition-colors hover:text-black">
+            <div className="relative z-10 px-4 py-2 flex items-center gap-1 transition-colors hover:text-[var(--color-primary)]">
               {tab.label}
               {tab.content && <ChevronDown size={12} className={`transition-transform duration-300 ${activeTab === tab.id ? 'rotate-180 opacity-100' : 'opacity-70'}`} strokeWidth={2.5} />}
             </div>
@@ -112,7 +112,7 @@ export function MegaNavigation() {
             {activeTab === tab.id && (
               <motion.div
                 layoutId="nav-pill"
-                className="absolute inset-0 bg-[#dcf5a1]/50 rounded-none z-0"
+                className="absolute inset-0 bg-[var(--color-accent-soft)] rounded-none z-0"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
@@ -132,7 +132,7 @@ export function MegaNavigation() {
               animate={{ height: 'auto', opacity: 1 }}
               exit={{ height: 0, opacity: 0 }}
               transition={{ duration: 0.3, ease: [0.23, 1, 0.32, 1] }}
-              className="overflow-hidden pointer-events-auto bg-white shadow-xl border-t border-black/5 mt-0"
+              className="overflow-hidden pointer-events-auto bg-white shadow-xl border-t border-[var(--color-primary)]/10 mt-0"
             >
               <div className="p-8">
                 <motion.div
