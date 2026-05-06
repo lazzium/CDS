@@ -43,7 +43,7 @@ function MouseFollower() {
 
   return (
     <div
-      className="pointer-events-none fixed z-[9999] text-white/90 text-2xl font-light mix-blend-difference"
+      className="pointer-events-none fixed z-[9999] text-white/90 text-2xl font-light mix-blend-difference hidden md:block"
       style={{
         left: pos.x,
         top: pos.y,
@@ -515,7 +515,38 @@ function LoadingScreen({ onComplete }: { onComplete: () => void }) {
 
 export default function App() {
   const [isLoading, setIsLoading] = useState(true);
-  const [activeService, setActiveService] = useState<number | null>(null);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [activeMobileMenu, setActiveMobileMenu] = useState<string | null>(null);
+
+  const mobileMenuItems = [
+    {
+      id: 'offre',
+      label: 'Offre',
+      links: [
+        { label: 'Boutique Shopify optimisée', href: '#services' },
+        { label: 'Produit validé', href: '#services' },
+        { label: 'Créatives TikTok & Meta', href: '#services' },
+      ],
+    },
+    {
+      id: 'agence',
+      label: 'Agence',
+      links: [
+        { label: 'Méthode', href: '#methode' },
+        { label: 'Accompagnement', href: '#contact' },
+        { label: 'FAQ', href: '#faq' },
+      ],
+    },
+    {
+      id: 'solutions',
+      label: 'Solutions',
+      links: [
+        { label: 'Shopify', href: '#services' },
+        { label: 'Produit', href: '#services' },
+        { label: 'Publicités', href: '#services' },
+      ],
+    },
+  ];
 
   useEffect(() => {
     if (isLoading) {
@@ -609,12 +640,74 @@ export default function App() {
             </div>
             
             {/* Hamburger on mobile */}
-            <button className="md:hidden text-black hover:opacity-70 transition-opacity">
+            <button
+              onClick={() => setIsMobileMenuOpen((prev) => !prev)}
+              className="md:hidden text-black hover:opacity-70 transition-opacity"
+              aria-label="Ouvrir le menu"
+              aria-expanded={isMobileMenuOpen}
+            >
                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                  <line x1="4" y1="9" x2="20" y2="9"></line>
                  <line x1="4" y1="15" x2="20" y2="15"></line>
                </svg>
             </button>
+
+            <AnimatePresence>
+              {isMobileMenuOpen && (
+                <motion.div
+                  initial={{ opacity: 0, y: -8 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -8 }}
+                  transition={{ duration: 0.2, ease: 'easeOut' }}
+                  className="absolute top-full left-0 w-full md:hidden bg-white border-t border-black/10 shadow-lg"
+                >
+                  <div className="px-4 py-3 flex flex-col">
+                    {mobileMenuItems.map((item) => {
+                      const isOpen = activeMobileMenu === item.id;
+                      return (
+                        <div key={item.id} className="border-b border-black/10 last:border-b-0">
+                          <button
+                            onClick={() => setActiveMobileMenu(isOpen ? null : item.id)}
+                            className="w-full flex items-center justify-between py-3 text-left text-[0.8rem] font-bold tracking-[0.08em] uppercase text-black"
+                          >
+                            {item.label}
+                            <ChevronDown size={14} className={`transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`} />
+                          </button>
+
+                          <AnimatePresence initial={false}>
+                            {isOpen && (
+                              <motion.div
+                                initial={{ height: 0, opacity: 0 }}
+                                animate={{ height: 'auto', opacity: 1 }}
+                                exit={{ height: 0, opacity: 0 }}
+                                transition={{ duration: 0.2, ease: 'easeOut' }}
+                                className="overflow-hidden"
+                              >
+                                <div className="pb-3 flex flex-col gap-1">
+                                  {item.links.map((link) => (
+                                    <a
+                                      key={link.label}
+                                      href={link.href}
+                                      className="block px-2 py-2 text-sm text-black/80 hover:text-black hover:bg-black/5 transition-colors"
+                                      onClick={() => {
+                                        setIsMobileMenuOpen(false);
+                                        setActiveMobileMenu(null);
+                                      }}
+                                    >
+                                      {link.label}
+                                    </a>
+                                  ))}
+                                </div>
+                              </motion.div>
+                            )}
+                          </AnimatePresence>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
           </div>
           </div>
         </header>
@@ -748,13 +841,12 @@ export default function App() {
 
         <div className="w-full flex flex-col border-t border-black/10">
           {services.map((service, index) => {
-            const isActive = activeService === index;
+            const isActive = true;
 
             return (
               <div
                 key={service.id}
-                onClick={() => setActiveService(isActive ? null : index)}
-                className="grid grid-cols-12 gap-4 py-8 md:py-12 border-b border-black/10 group cursor-pointer hover:bg-black/[0.02] transition-colors"
+                className="grid grid-cols-12 gap-4 py-8 md:py-12 border-b border-black/10 group"
               >
                 <div className="col-span-2 md:col-span-3 flex items-start pl-0 md:pl-8 lg:pl-12 pt-2 md:pt-4">
                   <ArrowRight strokeWidth={1.5} className={`w-5 h-5 md:w-6 md:h-6 transition-colors duration-300 ${isActive ? 'text-black translate-x-2' : 'text-black/30 group-hover:text-black/60'}`} />
@@ -790,9 +882,9 @@ export default function App() {
                           </div>
 
                           {service.images && (
-                            <div className="mt-12 md:mt-16 flex gap-4 md:gap-6 overflow-x-auto pb-4 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+                            <div className="mt-12 md:mt-16 flex flex-col gap-4 md:gap-6 pb-4">
                               {service.images.map((img, i) => (
-                                 <div key={i} className="w-[85vw] sm:w-[350px] md:w-[400px] lg:w-[450px] h-[250px] md:h-[300px] lg:h-[338px] rounded-none overflow-hidden shrink-0">
+                                 <div key={i} className="w-full max-w-[85vw] sm:max-w-[350px] md:max-w-[400px] lg:max-w-[450px] h-[250px] md:h-[300px] lg:h-[338px] rounded-none overflow-hidden">
                                     <img src={img} alt={`${service.title} preview ${i + 1}`} className="w-full h-full object-cover" />
                                  </div>
                               ))}
