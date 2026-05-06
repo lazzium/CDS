@@ -510,10 +510,10 @@ function ContactAndFooterSection() {
   return (
     <>
       {/* Top CTA */}
-      <AnimatedSection id="contact" className="relative w-full bg-[var(--color-accent)] py-32 md:py-48 px-6 md:px-12 flex flex-col items-center justify-center overflow-hidden z-10">
+      <AnimatedSection id="contact" className="relative w-full bg-[linear-gradient(135deg,var(--color-accent-soft)_0%,var(--color-surface)_48%,#f3ddff_100%)] py-32 md:py-48 px-6 md:px-12 flex flex-col items-center justify-center overflow-hidden z-10">
         {/* Cross Pattern Background */}
         <div 
-          className="absolute inset-[-50%] z-0 pointer-events-none opacity-[0.15]"
+          className="absolute inset-[-50%] z-0 pointer-events-none opacity-[0.08]"
           style={{
             backgroundImage: `url('data:image/svg+xml;utf8,<svg width="60" height="60" xmlns="http://www.w3.org/2000/svg"><path d="M 30 15 L 30 45 M 15 30 L 45 30" stroke="%234b166f" stroke-width="1.5" stroke-linecap="round" fill="none" /></svg>')`,
             backgroundSize: '60px 60px',
@@ -529,7 +529,7 @@ function ContactAndFooterSection() {
           </h2>
           
           <div className="flex w-full sm:w-auto items-center justify-center">
-            <a href={WHATSAPP_LINK} target="_blank" rel="noreferrer" className="flex-1 sm:flex-none justify-center bg-[var(--color-primary-dark)] text-white px-8 py-4 rounded-none text-[0.95rem] font-bold tracking-wide hover:bg-white hover:text-[var(--color-primary-dark)] transition-colors flex items-center gap-4 border border-[var(--color-primary-dark)]">
+            <a href={WHATSAPP_LINK} target="_blank" rel="noreferrer" className="flex-1 sm:flex-none justify-center bg-[var(--color-primary-dark)] text-white px-8 py-4 rounded-none text-[0.95rem] font-bold tracking-wide hover:bg-[var(--color-accent)] hover:text-[var(--color-ink)] transition-colors flex items-center gap-4 border border-[var(--color-primary-dark)]">
               Discuter maintenant <ArrowUpRight size={18} strokeWidth={2.5} />
             </a>
           </div>
@@ -548,7 +548,7 @@ function ContactAndFooterSection() {
               </p>
               
               <div className="flex items-center gap-0 w-full sm:w-auto mt-4">
-                <a href={WHATSAPP_LINK} target="_blank" rel="noreferrer" className="flex-1 sm:flex-none justify-center bg-[var(--color-accent)] text-[var(--color-ink)] px-7 py-3.5 rounded-none text-[0.95rem] font-bold tracking-wide hover:bg-white transition-colors flex items-center gap-4">
+                <a href={WHATSAPP_LINK} target="_blank" rel="noreferrer" className="flex-1 sm:flex-none justify-center bg-[var(--color-accent-soft)] text-[var(--color-primary-dark)] px-7 py-3.5 rounded-none text-[0.95rem] font-bold tracking-wide hover:bg-white transition-colors flex items-center gap-4">
                   Démarrer maintenant <ArrowUpRight size={18} strokeWidth={2.5} />
                 </a>
               </div>
@@ -573,7 +573,7 @@ function ContactAndFooterSection() {
 
           {/* Bottom Huge Logo and Copyright */}
           <div className="flex flex-col md:flex-row items-start md:items-end justify-between gap-8 border-t border-[var(--color-accent-soft)]/10 pt-10">
-            <h1 className="text-[4rem] md:text-[9rem] lg:text-[13rem] leading-[0.8] font-medium text-[var(--color-accent)] tracking-tighter">
+            <h1 className="text-[4rem] md:text-[9rem] lg:text-[13rem] leading-[0.8] font-medium text-[var(--color-accent-soft)] tracking-tighter">
               ©CDS
             </h1>
             
@@ -602,7 +602,7 @@ function LoadingScreen({ onComplete }: { onComplete: () => void }) {
         y: '-100%',
         transition: { duration: 0.8, ease: [0.76, 0, 0.24, 1] }
       }}
-      className="fixed inset-0 min-h-[100dvh] z-[10000] flex items-center justify-center overflow-hidden bg-[var(--color-accent)]"
+      className="fixed inset-0 min-h-[100dvh] z-[10000] flex items-center justify-center overflow-hidden bg-white"
     >
       <img
         src={headerBackground}
@@ -726,8 +726,6 @@ export default function App() {
             alt="Wind turbines on green hills"
             className="w-full h-full object-cover object-bottom opacity-100"
           />
-          {/* Gradual overlays to make text readable and blend edges */}
-          <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-primary-dark)]/45 via-[var(--color-primary)]/10 to-transparent"></div>
         </div>
 
 
