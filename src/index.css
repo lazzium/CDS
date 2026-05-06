@@ -1,0 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton+SC&family=Geist:wght@100..900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-geist: "Geist", sans-serif;
+  --font-anton: "Anton SC", sans-serif;
+}
