@@ -1,42 +1,43 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { ChevronDown, ArrowRight } from 'lucide-react';
 
+const closeOnClick = (setActiveTab: (tab: string | null) => void) => () => setActiveTab(null);
+
 const TABS = [
   {
-    id: 'projects',
-    label: 'Projects',
-    content: () => (
+    id: 'offre',
+    label: 'Offre',
+    content: (setActiveTab: (tab: string | null) => void) => (
       <div className="w-[350px] p-6 text-black bg-white">
-        <h3 className="font-bold mb-2 uppercase text-[0.6rem] tracking-wider text-black/50">Our latest work</h3>
+        <h3 className="font-bold mb-2 uppercase text-[0.6rem] tracking-wider text-black/50">Ce qui est inclus</h3>
         <div className="grid grid-cols-1 gap-1 mt-4 text-sm font-medium tracking-normal text-black capitalize">
-          <div className="flex items-center justify-between p-3 rounded-none hover:bg-black/5 cursor-pointer group transition-colors">
-            <span>Fintech App</span>
+          <a href="#services" onClick={closeOnClick(setActiveTab)} className="flex items-center justify-between p-3 rounded-none hover:bg-black/5 cursor-pointer group transition-colors">
+            <span>Boutique Shopify optimisée</span>
             <ArrowRight size={14} className="opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all" />
-          </div>
-          <div className="flex items-center justify-between p-3 rounded-none hover:bg-black/5 cursor-pointer group transition-colors">
-            <span>E-commerce Platform</span>
+          </a>
+          <a href="#services" onClick={closeOnClick(setActiveTab)} className="flex items-center justify-between p-3 rounded-none hover:bg-black/5 cursor-pointer group transition-colors">
+            <span>Produit validé</span>
             <ArrowRight size={14} className="opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all" />
-          </div>
-          <div className="flex items-center justify-between p-3 rounded-none hover:bg-black/5 cursor-pointer group transition-colors">
-            <span>Brand Identity</span>
+          </a>
+          <a href="#services" onClick={closeOnClick(setActiveTab)} className="flex items-center justify-between p-3 rounded-none hover:bg-black/5 cursor-pointer group transition-colors">
+            <span>Créatives TikTok & Meta</span>
             <ArrowRight size={14} className="opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all" />
-          </div>
+          </a>
         </div>
       </div>
     )
   },
   {
-    id: 'company',
-    label: 'Company',
-    content: () => (
+    id: 'agence',
+    label: 'Agence',
+    content: (setActiveTab: (tab: string | null) => void) => (
       <div className="w-[250px] p-6 text-black bg-white">
-        <h3 className="font-bold mb-2 uppercase text-[0.6rem] tracking-wider text-black/50">About Hydra</h3>
+        <h3 className="font-bold mb-2 uppercase text-[0.6rem] tracking-wider text-black/50">Cosmic Digital Studio</h3>
         <ul className="text-sm space-y-1 mt-4 font-medium tracking-normal capitalize text-black">
-          <li className="hover:bg-black/5 px-3 py-2 rounded-none cursor-pointer transition-colors block">Our Team</li>
-          <li className="hover:bg-black/5 px-3 py-2 rounded-none cursor-pointer transition-colors block">Careers</li>
-          <li className="hover:bg-black/5 px-3 py-2 rounded-none cursor-pointer transition-colors block">Contact</li>
-          <li className="hover:bg-black/5 px-3 py-2 rounded-none cursor-pointer transition-colors block">Press</li>
+          <li><a href="#methode" onClick={closeOnClick(setActiveTab)} className="hover:bg-black/5 px-3 py-2 rounded-none cursor-pointer transition-colors block">Méthode</a></li>
+          <li><a href="#contact" onClick={closeOnClick(setActiveTab)} className="hover:bg-black/5 px-3 py-2 rounded-none cursor-pointer transition-colors block">Accompagnement</a></li>
+          <li><a href="#faq" onClick={closeOnClick(setActiveTab)} className="hover:bg-black/5 px-3 py-2 rounded-none cursor-pointer transition-colors block">FAQ</a></li>
         </ul>
       </div>
     )
@@ -44,44 +45,58 @@ const TABS = [
   {
     id: 'solutions',
     label: 'Solutions',
-    content: () => (
+    content: (setActiveTab: (tab: string | null) => void) => (
       <div className="w-[420px] p-6 text-black bg-white">
-        <h3 className="font-bold mb-2 uppercase text-[0.6rem] tracking-wider text-black/50">What we do</h3>
+        <h3 className="font-bold mb-2 uppercase text-[0.6rem] tracking-wider text-black/50">Ce que nous faisons</h3>
         <div className="grid grid-cols-2 gap-3 text-sm mt-4 tracking-normal capitalize">
-          <div className="p-4 bg-black/5 rounded-none hover:bg-[#dcf5a1]/40 cursor-pointer transition-colors">
-            <div className="font-bold mb-1 text-black">Design</div>
-            <p className="text-black/60 text-xs">UI/UX, Branding, Motion</p>
-          </div>
-          <div className="p-4 bg-black/5 rounded-none hover:bg-[#dcf5a1]/40 cursor-pointer transition-colors">
-            <div className="font-bold mb-1 text-black">Development</div>
-            <p className="text-black/60 text-xs">React, Node, Cloud</p>
-          </div>
-          <div className="p-4 bg-black/5 rounded-none hover:bg-[#dcf5a1]/40 cursor-pointer transition-colors">
-            <div className="font-bold mb-1 text-black">Strategy</div>
-            <p className="text-black/60 text-xs">Growth, SEO, Copywriting</p>
-          </div>
+          <a href="#services" onClick={closeOnClick(setActiveTab)} className="p-4 bg-black/5 rounded-none hover:bg-[#dcf5a1]/40 cursor-pointer transition-colors block">
+            <div className="font-bold mb-1 text-black">Shopify</div>
+            <p className="text-black/60 text-xs">Structure, pages, conversion</p>
+          </a>
+          <a href="#services" onClick={closeOnClick(setActiveTab)} className="p-4 bg-black/5 rounded-none hover:bg-[#dcf5a1]/40 cursor-pointer transition-colors block">
+            <div className="font-bold mb-1 text-black">Produit</div>
+            <p className="text-black/60 text-xs">Recherche, potentiel, angle</p>
+          </a>
+          <a href="#services" onClick={closeOnClick(setActiveTab)} className="p-4 bg-black/5 rounded-none hover:bg-[#dcf5a1]/40 cursor-pointer transition-colors block">
+            <div className="font-bold mb-1 text-black">Publicités</div>
+            <p className="text-black/60 text-xs">TikTok, Meta, créatives</p>
+          </a>
         </div>
       </div>
     )
   },
-  {
-    id: 'news',
-    label: 'News',
-    // No content, just a visual link
-  }
 ];
 
 export function MegaNavigation() {
   const [activeTab, setActiveTab] = useState<string | null>(null);
+  const closeTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const clearCloseTimeout = () => {
+    if (closeTimeoutRef.current) {
+      clearTimeout(closeTimeoutRef.current);
+      closeTimeoutRef.current = null;
+    }
+  };
 
   const handleMouseLeave = () => {
-    setActiveTab(null);
+    clearCloseTimeout();
+    closeTimeoutRef.current = setTimeout(() => {
+      setActiveTab(null);
+    }, 220);
+  };
+
+  const handleMouseEnter = () => {
+    clearCloseTimeout();
   };
 
   const activeContent = TABS.find((t) => t.id === activeTab)?.content;
 
   return (
-    <div className="hidden lg:flex flex-col z-50 text-[0.65rem] font-bold tracking-[0.1em] text-black/80 uppercase" onMouseLeave={handleMouseLeave}>
+    <div
+      className="hidden lg:flex flex-col z-50 text-[0.65rem] font-bold tracking-[0.1em] text-black/80 uppercase"
+      onMouseLeave={handleMouseLeave}
+      onMouseEnter={handleMouseEnter}
+    >
       <div className="flex items-center gap-1 h-10">
         {TABS.map((tab) => (
           <div
@@ -109,7 +124,7 @@ export function MegaNavigation() {
       </div>
 
       {/* Mega Menu Content Area - Overlays the content below */}
-      <div className="absolute top-full left-0 w-full pointer-events-none">
+      <div className="absolute top-full left-0 w-full pointer-events-none" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
         <AnimatePresence>
           {activeTab && activeContent && (
             <motion.div
@@ -127,7 +142,7 @@ export function MegaNavigation() {
                   exit={{ opacity: 0, x: 10 }}
                   transition={{ duration: 0.2, ease: "easeOut" }}
                 >
-                  {activeContent()}
+                  {activeContent(setActiveTab)}
                 </motion.div>
               </div>
             </motion.div>
