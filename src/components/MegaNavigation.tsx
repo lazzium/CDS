@@ -49,15 +49,15 @@ const TABS = [
       <div className="w-[420px] p-6 text-black bg-white">
         <h3 className="font-bold mb-2 uppercase text-[0.6rem] tracking-wider text-black/50">Ce que nous faisons</h3>
         <div className="grid grid-cols-2 gap-3 text-sm mt-4 tracking-normal capitalize">
-          <a href="#services" onClick={closeOnClick(setActiveTab)} className="p-4 bg-black/5 rounded-none hover:bg-[#dcf5a1]/40 cursor-pointer transition-colors block">
+          <a href="#services" onClick={closeOnClick(setActiveTab)} className="p-4 bg-black/5 rounded-none hover:bg-[#c084fc]/40 cursor-pointer transition-colors block">
             <div className="font-bold mb-1 text-black">Shopify</div>
             <p className="text-black/60 text-xs">Structure, pages, conversion</p>
           </a>
-          <a href="#services" onClick={closeOnClick(setActiveTab)} className="p-4 bg-black/5 rounded-none hover:bg-[#dcf5a1]/40 cursor-pointer transition-colors block">
+          <a href="#services" onClick={closeOnClick(setActiveTab)} className="p-4 bg-black/5 rounded-none hover:bg-[#c084fc]/40 cursor-pointer transition-colors block">
             <div className="font-bold mb-1 text-black">Produit</div>
             <p className="text-black/60 text-xs">Recherche, potentiel, angle</p>
           </a>
-          <a href="#services" onClick={closeOnClick(setActiveTab)} className="p-4 bg-black/5 rounded-none hover:bg-[#dcf5a1]/40 cursor-pointer transition-colors block">
+          <a href="#services" onClick={closeOnClick(setActiveTab)} className="p-4 bg-black/5 rounded-none hover:bg-[#c084fc]/40 cursor-pointer transition-colors block">
             <div className="font-bold mb-1 text-black">Publicités</div>
             <p className="text-black/60 text-xs">TikTok, Meta, créatives</p>
           </a>
@@ -112,7 +112,7 @@ export function MegaNavigation() {
             {activeTab === tab.id && (
               <motion.div
                 layoutId="nav-pill"
-                className="absolute inset-0 bg-[#dcf5a1]/50 rounded-none z-0"
+                className="absolute inset-0 bg-[#c084fc]/50 rounded-none z-0"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
