@@ -13,7 +13,7 @@ import coachingImage1 from '../assets/service ~ coaching/Image 1.png';
 import coachingImage2 from '../assets/service ~ coaching/image 2.png';
 import coachingImage3 from '../assets/service ~ coaching/Image 3.png';
 
-const WHATSAPP_LINK = 'https://wa.me/33746664032';
+const WHATSAPP_LINK = 'https://wa.me/message/SGQCQZA5J56EE1';
 
 function AnimatedSection({ children, className = '', id }: { children: React.ReactNode; className?: string; id?: string }) {
   return (
